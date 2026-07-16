@@ -14,7 +14,7 @@ class TodoUpdate(BaseModel):
     completed: bool | None = None
 
 
-class TodoResposnse(BaseModel):
+class TodoResponse(BaseModel):
     id: int
     title: str
     description: str | None
