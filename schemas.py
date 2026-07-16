@@ -13,6 +13,7 @@ class TodoUpdate(BaseModel):
     description: str | None = None
     completed: bool | None = None
 
+
 class TodoResposnse(BaseModel):
     id: int
     title: str
