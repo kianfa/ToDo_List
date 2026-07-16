@@ -16,7 +16,7 @@ def get_todo(session: Session, todo_id: int) -> Todo | None:
     return session.get(Todo, todo_id)
 
 
-def get_todos(session: Session) -> Sequence[Todo][Todo]:
+def get_todos(session: Session) -> Sequence[Todo]:
     """Retrieves all Todos from the database."""
     return session.exec(select(Todo)).all()
 
