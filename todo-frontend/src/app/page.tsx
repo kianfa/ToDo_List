@@ -38,7 +38,7 @@ export default function Home() {
         ) : todos.length === 0 ? (
           <p className="text-center text-textSecondary">No tasks yet. Add one above!</p>
         ) : (
-          // 👇 Look how clean this is now!
+
           todos.map((todo) => (
             <TodoItem
               key={todo.id}

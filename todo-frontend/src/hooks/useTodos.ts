@@ -7,13 +7,18 @@ export function useTodos() {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchTodos = async () => {
-    try {
+    try
+    {
       setIsLoading(true);
       const data = await api.getTodos();
       setTodos(data || []);
-    } catch (error) {
+    }
+    catch (error)
+    {
       console.error("Failed to fetch todos:", error);
-    } finally {
+    }
+    finally
+    {
       setIsLoading(false);
     }
   };
@@ -26,22 +31,29 @@ export function useTodos() {
     e.preventDefault();
     if (!newTaskTitle.trim()) return;
 
-    try {
+    try
+    {
       const newTodo = await api.createTodo(newTaskTitle);
-      if (newTodo) {
+      if (newTodo)
+      {
         setTodos([...todos, newTodo]);
       }
       setNewTaskTitle("");
-    } catch (error) {
+    }
+    catch (error)
+    {
       console.error("Failed to create todo:", error);
     }
   };
 
   const handleToggleComplete = async (todo: Todo) => {
-    try {
+    try
+    {
       const updatedTodo = await api.updateTodo(todo.id, { completed: !todo.completed });
       setTodos(todos.map((t) => (t.id === updatedTodo.id ? updatedTodo : t)));
-    } catch (error) {
+    }
+    catch (error)
+    {
       console.error("Failed to update todo:", error);
     }
   };
